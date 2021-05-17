@@ -1,19 +1,49 @@
+//
+// Fonts
+//
+@font-face {
+  font-family: Mlight;
+  src: url(./assets/fonts/Montserrat-Light.ttf);
+}
+@font-face {
+  font-family: Mreg;
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Msemi;
+  src: url(./assets/fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: Mbold;
+  src: url(./assets/fonts/Montserrat-Bold.ttf);
+}
+//
+// Default setting
+//
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+//
+// Varaible and reuseable functions
+//
 .designBorder() {
   border: 1px red solid;
 }
 
 @MainBackgroundColor: #fcfcfc;
-@TextMainColor: #1a1a1a;
+@TextMainDarkColor: #1a1a1a;
+@TextMainLightColor: #858282;
+//
+//
+//
 
 //
 // Nav Bar Section
 //
-
 .nav-container {
   width: 100vw;
   background-color: @MainBackgroundColor;
@@ -37,10 +67,10 @@
         text-decoration: none;
 
         .nav-link-text {
-          color: @TextMainColor;
+          color: @TextMainDarkColor;
 
           &:hover {
-            border-bottom: 1px @TextMainColor solid;
+            border-bottom: 1px @TextMainDarkColor solid;
           }
         }
 
@@ -53,5 +83,47 @@
 }
 
 //
+// Landing section
 //
-//
+.landing-section {
+  .landing-container {
+    .landing-wrapper {
+      .landing-text-div {
+        padding: 10rem 0rem 3rem 6rem;
+        width: 70%;
+
+        .landing-text-header {
+          font-family: Mbold;
+          font-size: 4rem;
+          letter-spacing: 4px;
+        }
+        .landing-text-description {
+          font-family: Mreg;
+          font-size: 1rem;
+          color: @TextMainLightColor;
+          margin-top: 3rem;
+          letter-spacing: 1px;
+        }
+        .landing-text-button {
+          font-family: Msemi;
+          background-color: @TextMainDarkColor;
+          padding: 1em 2em;
+          border: none;
+          border-radius: 0.5em;
+          margin-top: 3rem;
+
+          .landing-text-button-color {
+            text-decoration: none;
+            color: @MainBackgroundColor;
+            letter-spacing: 1px;
+          }
+
+          &:hover {
+            transform: scale(1.1);
+            transition: 0.6s ease all;
+          }
+        }
+      }
+    }
+  }
+}
