@@ -45,11 +45,49 @@
     transform: scale(1.1);
     transition: 0.6s ease all;
   }
+
+  @media screen and (min-width: 720px) and (max-width: 900px) {
+    padding: 0.8rem;
+    font-size: 0.6rem;
+  }
 }
 .linkDefaultColor() {
   text-decoration: none;
   color: @MainBackgroundColor;
   letter-spacing: 1px;
+}
+.PrimaryHeader() {
+  font-family: Mbold;
+  color: #01094d;
+  font-size: 2.5rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 720px) and (max-width: 900px) {
+    font-size: 1.5rem;
+  }
+}
+
+.PrimaryDescription() {
+  font-family: Mreg;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #858282;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 720px) and (max-width: 900px) {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
 }
 
 @MainBackgroundColor: #fcfcfc;
@@ -81,6 +119,10 @@
       justify-content: center;
       align-items: center;
 
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
       .nav-link {
         margin: 0 1em;
         text-decoration: none;
@@ -91,10 +133,6 @@
           &:hover {
             border-bottom: 1px @TextMainDarkColor solid;
           }
-        }
-
-        @media screen and (max-width: 600px) {
-          display: none;
         }
       }
 
@@ -120,17 +158,28 @@
         padding: 10rem 0rem 3rem 6rem;
         width: 70%;
 
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          padding: 5rem 2rem;
+          text-align: center;
+        }
+
         .landing-text-header {
           font-family: Mbold;
           font-size: 4rem;
           letter-spacing: 4px;
+
+          @media screen and (max-width: 600px) {
+            font-size: 2rem;
+          }
+
+          @media screen and (min-width: 720px) and (max-width: 900px) {
+            font-size: 1.7rem;
+          }
         }
         .landing-text-description {
-          font-family: Mreg;
-          font-size: 1rem;
-          color: @TextMainLightColor;
           margin-top: 3rem;
-          letter-spacing: 1px;
+          .PrimaryDescription;
         }
         .landing-text-button {
           margin-top: 3rem;
@@ -139,6 +188,42 @@
           .landing-text-button-color {
             .linkDefaultColor();
           }
+        }
+      }
+    }
+  }
+}
+
+//
+// Sample section
+//
+.sample-section {
+  .sample-container {
+    width: 80%;
+    margin: auto;
+    .sample-grid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-gap: 1rem;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 100%;
+      }
+
+      .sample-gridItem-text {
+        padding: 4rem 0;
+
+        .sample-grid-header {
+          .PrimaryHeader;
+        }
+        .sample-grid-description {
+          .PrimaryDescription();
+          margin-top: 3rem;
+        }
+      }
+
+      .sample-gridItem-image {
+        .sample-image {
         }
       }
     }
