@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.designBorder() {
+  border: 1px red solid;
+}
+
+@MainBackgroundColor: #fcfcfc;
+@TextMainColor: #1a1a1a;
+
+//
+// Nav Bar Section
+//
+
+.nav-container {
+  width: 100vw;
+  background-color: @MainBackgroundColor;
+  .designBorder;
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    .nav-header-div {
+      flex-grow: 1;
+    }
+
+    .nav-tab-div {
+      display: flex;
+
+      .nav-link {
+        margin: 0 0.5em;
+        text-decoration: none;
+
+        .nav-link-text {
+          color: @TextMainColor;
+
+          &:hover {
+            border-bottom: 1px @TextMainColor solid;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//
+//
+//
