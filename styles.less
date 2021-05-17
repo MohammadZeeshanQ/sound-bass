@@ -33,6 +33,24 @@
 .designBorder() {
   border: 1px red solid;
 }
+.primaryButtonSize() {
+  font-family: Msemi;
+  background-color: @TextMainDarkColor;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.5em;
+  letter-spacing: 1px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.6s ease all;
+  }
+}
+.linkDefaultColor() {
+  text-decoration: none;
+  color: @MainBackgroundColor;
+  letter-spacing: 1px;
+}
 
 @MainBackgroundColor: #fcfcfc;
 @TextMainDarkColor: #1a1a1a;
@@ -47,13 +65,12 @@
 .nav-container {
   width: 100vw;
   background-color: @MainBackgroundColor;
-  .designBorder;
 
   .nav-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 
     .nav-header-div {
       flex-grow: 1;
@@ -61,9 +78,11 @@
 
     .nav-tab-div {
       display: flex;
+      justify-content: center;
+      align-items: center;
 
       .nav-link {
-        margin: 0 0.5em;
+        margin: 0 1em;
         text-decoration: none;
 
         .nav-link-text {
@@ -76,6 +95,15 @@
 
         @media screen and (max-width: 600px) {
           display: none;
+        }
+      }
+
+      .nav-buy-button {
+        margin: 0 1rem;
+        .primaryButtonSize;
+
+        .nav-buy-button-text {
+          .linkDefaultColor;
         }
       }
     }
@@ -105,22 +133,11 @@
           letter-spacing: 1px;
         }
         .landing-text-button {
-          font-family: Msemi;
-          background-color: @TextMainDarkColor;
-          padding: 1em 2em;
-          border: none;
-          border-radius: 0.5em;
           margin-top: 3rem;
+          .primaryButtonSize;
 
           .landing-text-button-color {
-            text-decoration: none;
-            color: @MainBackgroundColor;
-            letter-spacing: 1px;
-          }
-
-          &:hover {
-            transform: scale(1.1);
-            transition: 0.6s ease all;
+            .linkDefaultColor();
           }
         }
       }
